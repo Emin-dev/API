@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Response</title>
+    <script>
+        async function fetchData() {
+            const response = await fetch('https://8000-emindev-api-to6g8gc34ob.ws-us96.gitpod.io');
+            const data = await response.json();
+            document.getElementById('result').innerHTML = response;
+        }
+        Sentry.init({
+  allowUrls: [/https?:\/\/((cdn|www)\.)?example\.com/],
+});
+
+    </script>
+</head>
+<body>
+    <h1>API Response</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <pre id="result"></pre>
+</body>
+</html>
